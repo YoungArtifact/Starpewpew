@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://assets/Blue Sky 8x8 Monospaced.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/background_space.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="startbutton" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -108.0
+margin_right = 38.0001
+margin_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 1.64, 1.64 )
+custom_fonts/font = SubResource( 1 )
+text = "START GAME!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 10.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "You have 2 minutes to save your planet!
+Destroy as many enemy ships as you can!
+You need 200 points to win and have 2 minutes to do so.
+spacebar to shoot"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/startbutton" to="." method="_on_startbutton_pressed"]
