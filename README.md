@@ -1,2 +1,2 @@
 # Starpewpew
- Simple tobdown, asteroid-esque game, made with chanky code
+ Simple topdown, asteroid-esque game, made with chanky code
